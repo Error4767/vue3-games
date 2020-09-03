@@ -1,14 +1,13 @@
 <template>
   <div class="wrapper">
-    <div v-if="state===0">
+    <span v-if="state===0">
+      
+    </span>
+    <span class='number' v-else-if='state===1'>
       {{aroundBoomNumber}}
-    </div>
-    <div v-else-if="state===1">
-      <img class="icon" src="./boom.jpg" alt="boom" />
-    </div>
-    <div v-else-if="state===2">
-      <img class="icon" src="./banner.png" alt="banner" />
-    </div>
+    </span>
+    <img v-else-if="state===2" class="icon" src="./boom.jpg" alt="boom" />
+    <img v-else-if="state===3" class="icon" src="./banner.png" alt="banner" />
   </div>
 </template>
 
@@ -43,5 +42,10 @@ export default {
 .icon {
   width: 100%;
   height: 100%;
+}
+
+.number {
+  font-size: 26px;
+  color: #66ccff;
 }
 </style>

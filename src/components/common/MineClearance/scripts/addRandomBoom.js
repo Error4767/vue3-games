@@ -1,8 +1,6 @@
 import randomIntegerNumbers from './randomIntegerNumbers.js';
 
-function isInvalid(position) {
-  return position[0] < 0 || position[1] < 0 ? true : false;
-}
+import isInvalid from './isInvalid.js';
 
 function getMotrixSize(motrix) {
   return [motrix[0].length, motrix.length];//[长,宽]

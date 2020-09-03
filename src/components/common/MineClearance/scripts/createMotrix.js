@@ -1,6 +1,8 @@
 function createAreaObject() {
   return {
-
+    show: false,
+    aroundBoomNumber: 0,
+    signed: false
   }
 }
 
