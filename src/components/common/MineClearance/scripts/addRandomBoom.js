@@ -1,7 +1,28 @@
 import randomIntegerNumbers from './randomIntegerNumbers.js';
 
+function isInvalid(position) {
+  return position[0] < 0 || position[1] < 0 ? true : false;
+}
+
 function getMotrixSize(motrix) {
-  return [motrix[0].length,motrix.length];//[长,宽]
+  return [motrix[0].length, motrix.length];//[长,宽]
+}
+
+function toMotrixPosition(v, length) {
+  const row = Math.floor(v / length);
+  const column = v - row * length;
+  console.log(v, row, column);
+  const position = [row, column];
+  if (position[0] !== 0) {
+    position[0]--;
+  }
+  if (position[1] !== 0) {
+    position[1]--;
+  } else {
+    position[1] = length - 1;
+  }
+  console.log(position);
+  return position;
 }
 
 export default function addRandomBoom(number, sourceMotrix) {
@@ -17,10 +38,30 @@ export default function addRandomBoom(number, sourceMotrix) {
   // 随机数
   const boomAreaSerials = randomIntegerNumbers(number, 0, motrixElementNumber);
   // 根据随机数设置矩阵元素(安雷)
-  boomAreaSerials.map(v=> {
-    const row = Math.floor(v / width);
-    return [row, v - row * width];
-  }).forEach(position=> {
+  console.log(motrix);
+  boomAreaSerials.map(v => toMotrixPosition(v, length)).forEach(position => {
+    console.log(position);
+    [
+      [position[0] - 1, position[1] - 1],
+      [position[0] - 1, position[1]],
+      [position[0] - 1, position[1] + 1],
+      [position[0], position[1] - 1],
+      [position[0], position[1]],
+      [position[0], position[1] + 1],
+      [position[0] + 1, position[1] - 1],
+      [position[0] + 1, position[1]],
+      [position[0] + 1, position[1] + 1],
+    ].forEach(position => {
+      if (isInvalid(position)) {
+        return;
+      }
+      // 如果才添加数量
+      motrix[position[0]] && motrix[position[0]][position[1]] && (
+        motrix[position[0]][position[1]].aroundBoomNumber ?
+          motrix[position[0]][position[1]].aroundBoomNumber++ :
+          motrix[position[0]][position[1]].aroundBoomNumber = 1
+      );
+    });
     motrix[position[0]][position[1]].boom = true;
   });
   return motrix;

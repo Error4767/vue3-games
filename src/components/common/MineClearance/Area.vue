@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div v-if="state===0">
-      <div></div>
+      {{aroundBoomNumber}}
     </div>
     <div v-else-if="state===1">
       <img class="icon" src="./boom.jpg" alt="boom" />
@@ -19,6 +19,10 @@ export default {
     state: {
       type: Number,
       default: 0
+    },
+    aroundBoomNumber: {
+      type: Number,
+      default: 0
     }
   },
   setup() {
@@ -33,6 +37,7 @@ export default {
   width: 50px;
   height: 50px;
   border: 1px solid #000;
+  line-height: 48px;
 }
 
 .icon {

@@ -1,15 +1,15 @@
 <template>
   <div class='container'>
-    <Area v-for='num in areaNumber' :state='0' :key='num' />
+    <div class='row' v-for='row in gameData' :key='JSON.stringify(row)'>
+      <Area v-for='item in row' :state='item.boom ? 1 : 0' :key='JSON.stringify(item)' :aroundBoomNumber='item.aroundBoomNumber'/>
+    </div>
   </div>
 </template>
 
 <script>
-
+import { reactive } from 'vue';
 import Area from './Area.vue';
 import randomGameData from './scripts/randomGameData.js';
-
-window.randomGameData = randomGameData;
 
 export default {
   name: 'MineClearance',
@@ -17,8 +17,12 @@ export default {
     Area
   },
   setup() {
+    const sourceGameData = randomGameData(10, 10, 10);
+    console.log(sourceGameData);
+    const gameData = reactive(sourceGameData);
     return {
-      areaNumber: 100
+      areaNumber: 100,
+      gameData
     }
   }
 }
@@ -30,5 +34,11 @@ export default {
     height: 502px;
     border: 1px solid #000;
     line-height: 0;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 </style>

@@ -9,7 +9,9 @@ export default function createMotrix(length = 10, width = 10) {
   for(let i = 0; i<width; i++) {
     let arr = [];
     for(let j = 0; j<length; j++) {
-      arr.push(createAreaObject());
+      const area = createAreaObject();
+      area.position = [i, j];
+      arr.push(area);
     }
     motrix.push(arr);
   }
