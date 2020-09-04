@@ -1,6 +1,10 @@
 <template>
   <div>
-    <MineClearance></MineClearance>
+    <MineClearance :areaSize='"45px"' :settings="{
+      length: 12,
+      width: 12,
+      boomNumber: 18
+    }"></MineClearance>
     <scrollNum></scrollNum>
     <Calculator></Calculator>
     <CompositionApiTest></CompositionApiTest>

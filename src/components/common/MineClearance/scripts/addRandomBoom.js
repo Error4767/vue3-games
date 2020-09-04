@@ -11,13 +11,15 @@ function toMotrixPosition(v, length) {
   const column = v - row * length;
   console.log(v, row, column);
   const position = [row, column];
-  if (position[0] !== 0) {
-    position[0]--;
-  }
   if (position[1] !== 0) {
     position[1]--;
   } else {
-    position[1] = length - 1;
+    if(v !== 0) {
+      position[0]--;
+      position[1] = length - 1;
+    }else {
+      position[0] = 0;
+    }
   }
   console.log(position);
   return position;
