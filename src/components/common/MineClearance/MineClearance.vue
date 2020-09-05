@@ -124,7 +124,7 @@ export default {
     const { length, width, boomNumber } = props.settings;
     const sourceGameData = randomGameData(length, width, boomNumber);
     // 打印游戏数据
-    console.log(sourceGameData);
+    console.log('本次扫雷游戏数据:', sourceGameData);
     const gameData = reactive(sourceGameData);
     const notBoomAllAreas = gameData.flat().filter(area => {
       return !area.boom;

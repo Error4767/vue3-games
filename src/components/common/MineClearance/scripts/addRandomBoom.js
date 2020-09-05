@@ -9,7 +9,6 @@ function getMotrixSize(motrix) {
 function toMotrixPosition(v, length) {
   const row = Math.floor(v / length);
   const column = v - row * length;
-  console.log(v, row, column);
   const position = [row, column];
   if (position[1] !== 0) {
     position[1]--;
@@ -21,7 +20,6 @@ function toMotrixPosition(v, length) {
       position[0] = 0;
     }
   }
-  console.log(position);
   return position;
 }
 
@@ -38,9 +36,7 @@ export default function addRandomBoom(number, sourceMotrix) {
   // 随机数
   const boomAreaSerials = randomIntegerNumbers(number, 0, motrixElementNumber);
   // 根据随机数设置矩阵元素(安雷)
-  console.log(motrix);
   boomAreaSerials.map(v => toMotrixPosition(v, length)).forEach(position => {
-    console.log(position);
     [
       [position[0] - 1, position[1] - 1],
       [position[0] - 1, position[1]],
