@@ -1,9 +1,11 @@
 <template>
   <div>
     <MineSweeper></MineSweeper>
-    <!-- <scrollNum></scrollNum>
+    <JSXTest></JSXTest>
+    <!-- <TeleportTest></TeleportTest>
+    <scrollNum></scrollNum>
     <Calculator></Calculator>
-    <CompositionApiTest></CompositionApiTest>-->
+    <CompositionApiTest></CompositionApiTest> -->
   </div>
 </template>
 
@@ -17,21 +19,27 @@ import {
 
 import MineSweeper from './MineSweeper.vue';
 
-import ScrollNum from "./components/content/ScrollNum.vue";
-import FileTree from "./components/common/FileTree.vue";
-import fileData from "./testData/fileTree.js";
+import JSXTest from './JSXTest.jsx';
 
-import CompositionApiTest from "./CompositionApiTest.vue";
+//import TeleportTest from './TeleportTest.vue';
 
-import Calculator from "./components/common/Calculator.vue";
+// import ScrollNum from "./components/content/ScrollNum.vue";
+// import FileTree from "./components/common/FileTree.vue";
+// import fileData from "./testData/fileTree.js";
+
+// import CompositionApiTest from "./CompositionApiTest.vue";
+
+// import Calculator from "./components/common/Calculator.vue";
 
 export default defineComponent({
   components: {
     MineSweeper,
-    ScrollNum,
-    FileTree,
-    Calculator,
-    CompositionApiTest,
+    // ScrollNum,
+    // FileTree,
+    // Calculator,
+    // CompositionApiTest,
+    JSXTest,
+    //TeleportTest,
   },
   setup() {
     return {
