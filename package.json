@@ -2,14 +2,14 @@
   "name": "vite-app",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host=0.0.0.0",
     "build": "vite build"
   },
   "dependencies": {
-    "vue": "^3.0.0-beta.20"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.0-beta.15",
-    "vite": "^1.0.0-beta.11"
+    "@vitejs/plugin-vue": "^4.2.1",
+    "vite": "^4.3.5"
   }
 }

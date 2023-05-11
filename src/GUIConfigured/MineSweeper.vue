@@ -27,9 +27,7 @@ import {
   reactive,
 } from "vue";
 
-import MineClearance from "./components/common/MineClearance/MineClearance.vue";
-
-
+import MineClearance from "../components/common/MineClearance/MineClearance.vue";
 
 export default {
   components: {
