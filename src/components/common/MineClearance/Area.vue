@@ -55,6 +55,6 @@ export default {
 
 .number {
   font-size: 0.55em;
-  color: #66ccff;
+  color: #000;
 }
 </style>

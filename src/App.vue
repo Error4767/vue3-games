@@ -1,28 +1,10 @@
 <template>
-  <div>
-    <MineSweeper></MineSweeper>
-  </div>
+  <router-view></router-view>
 </template>
 
-<script>
-import {
-  defineComponent,
-} from 'vue';
+<script setup>
 
-import MineSweeper from './GUIConfigured/MineSweeper.vue';
-
-export default defineComponent({
-  components: {
-    MineSweeper,
-  },
-  setup() {
-    return {
-
-    }
-  }
-})
 </script>
   
 <style scoped>
-  
 </style>

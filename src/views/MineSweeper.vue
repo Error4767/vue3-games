@@ -57,6 +57,6 @@ export default {
   
 <style scoped>
 .control {
-  color: #66ccff;
+  color: #000;
 }
 </style>
