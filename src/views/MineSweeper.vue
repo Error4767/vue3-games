@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div style="font-size: 25px; padding: 10px;">
+      MineClearance (扫雷)
+      <img src="../assets/icon/question-circle.svg" style="width: 25px; cursor: pointer;" title="左击扫雷，右击标记" />
+    </div>
     <MineClearance :areaSize="areaSize" :settings="settings" :key="key"></MineClearance>
     <br />
     <div class="control">

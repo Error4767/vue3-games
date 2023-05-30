@@ -92,6 +92,7 @@ export default function normalMode(settings = reactive({
       }
     };
     hotkeysjs("a", leftAction);
+    hotkeysjs("left", leftAction);
     const rightAction = () => {
       // 检测操作之后的是否符合要求
       if (!hasOverlappingSquares(getCurrentParams(params => {
@@ -103,7 +104,9 @@ export default function normalMode(settings = reactive({
       }
     };
     hotkeysjs("d", rightAction);
+    hotkeysjs("right", rightAction);
     hotkeysjs("s", downAction);
+    hotkeysjs("down", downAction);
     const rotateAction = () => {
       const rotated = toRotateMotrix(coreState.motrix, LEFT);
       // 检测操作之后的是否符合要求
@@ -116,10 +119,15 @@ export default function normalMode(settings = reactive({
       }
     }
     hotkeysjs("space", rotateAction);
+    hotkeysjs("r", rotateAction);
     return () => {
       hotkeysjs.unbind("a", leftAction);
       hotkeysjs.unbind("d", rightAction);
       hotkeysjs.unbind("s", downAction);
+      hotkeysjs.unbind("left", leftAction);
+      hotkeysjs.unbind("right", rightAction);
+      hotkeysjs.unbind("down", downAction);
+      hotkeysjs.unbind("r", rotateAction);
       hotkeysjs.unbind("space", rotateAction);
     }
   }

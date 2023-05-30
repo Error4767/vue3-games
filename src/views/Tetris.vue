@@ -1,5 +1,9 @@
 <template>
   <div class="tetris-container">
+    <div style="font-size: 25px; padding: 10px;">
+      Tetris (俄罗斯方块)
+      <img src="../assets/icon/question-circle.svg" style="width: 25px; cursor: pointer;" title="使用 a s d 或 ← ↓ → 移动方块，r 或 空格 旋转方块" />
+    </div>
     <div class="score">得分: {{ score }}</div>
     <div class="operations">
       <button class="operation-button" @click="startNoFocus">新开始</button>
