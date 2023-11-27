@@ -1,0 +1,22 @@
+# 打包命令
+# 测试命令
+# wasm-pack build --target web --out-dir ../../wasm/snake --out-name index
+# 生产构建
+# wasm-pack build --release --target web --out-dir ../../wasm/snake --out-name index
+
+[package]
+name = "snake_wasm_"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.88"
+wee_alloc = "0.4.5"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
