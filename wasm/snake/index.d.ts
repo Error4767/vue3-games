@@ -2,18 +2,18 @@
 /* eslint-disable */
 /**
 */
-export enum GameStatus {
-  Won = 0,
-  Lost = 1,
-  Played = 2,
-}
-/**
-*/
 export enum Direction {
   Up = 0,
   Down = 1,
   Left = 2,
   Right = 3,
+}
+/**
+*/
+export enum GameStatus {
+  Won = 0,
+  Lost = 1,
+  Played = 2,
 }
 /**
 */
